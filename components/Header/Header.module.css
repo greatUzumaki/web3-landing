@@ -1,0 +1,124 @@
+.header {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(20px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--foreground);
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.9;
+}
+
+.logo svg {
+  transition: transform 0.3s ease;
+}
+
+.logo:hover svg {
+  transform: rotate(-5deg);
+}
+
+.tagline {
+  font-size: 1.1rem;
+  opacity: 0.5;
+  color: var(--foreground);
+  font-weight: 500;
+  background: linear-gradient(
+    to right,
+    var(--primary),
+    var(--primary-dark),
+    var(--primary),
+    var(--primary-dark)
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.link {
+  color: var(--foreground);
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+  font-weight: 500;
+}
+
+.link:hover {
+  opacity: 1;
+}
+
+.primaryButton {
+  background: rgba(129, 140, 248, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(129, 140, 248, 0.2);
+  color: var(--primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.primaryButton:hover {
+  background: rgba(129, 140, 248, 0.2);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(129, 140, 248, 0.2);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .tagline {
+    display: none;
+  }
+
+  .actions {
+    gap: 1rem;
+  }
+
+  .link {
+    display: none;
+  }
+
+  .primaryButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
